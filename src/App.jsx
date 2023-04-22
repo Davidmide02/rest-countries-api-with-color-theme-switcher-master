@@ -10,10 +10,12 @@ function App() {
   // const [count, setCount] = useState(0);
   const [countries, setCountries] = useState(data);
   const [detail, setDetail] = useState(false);
-  const [search, setSearch] = useState(null)
+  const [search, setSearch] = useState(null);
+  const [select, setSelect] = useState(null);
+
 
   return (
-    <div className="App bg-bg_dark-200 text-bg_light-200">
+    <div className="App text-bg_light-200">
       <Header />
       <div className="px-4">
 
@@ -27,11 +29,14 @@ function App() {
       // setSearch={setSearch}
       setCountries={setCountries}
       countries={countries}
+      setSelect={setSelect}
+      select={select}
       />
       <Card 
       countries={countries}
       detail={detail}
       search={search}
+      select={select}
       />
       </div>
     </div>
