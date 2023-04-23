@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 
-function Filter({ setCountries, countries, select, setSelect }) {
+function Filter({ setCountries, countries, select, setSelect, mode }) {
   const [value, setValue] = useState();
 
   function handleClick() {
-    // console.log(value);
     if (value === undefined || value === "Filter by region") {
-      console.log("I am undefine");
+      return;
     } else {
-      console.log("I have value");
       setValue();
       const region = countries.filter((country) => country.region === value);
-      console.log(region);
       setSelect(region);
-      console.log(select);
     }
   }
 
@@ -21,33 +17,57 @@ function Filter({ setCountries, countries, select, setSelect }) {
     <div className="filter p-2 bg">
       <form>
         <select
-          className="bg-dark_el-200 p-2 outline-none font-medium mb-6"
+          className={`${
+            mode ? "bg-dark_el-200" : "bg-light_el-200"
+          } p-2 outline-none font-medium ${
+            mode ? "text-dark_text" : "text-text_light-200"
+          } mb-6 font-bold`}
           name=""
           id="values"
           onChange={(e) => setValue(e.target.value)}
           onClick={handleClick}
         >
-          <option className="bg-dark_el-200" value="Filter by region">
+          <option className={`bg-dark_el-200`} value="Filter by region">
             Filter by region
           </option>
           <option
-            className="bg-dark_el-200 font- p-2"
+            className={`${
+              mode ? "text-dark_text" : "text-text_light-200"
+            } font-bold p-2`}
             value="Africa"
-            // onChange={(e)=> setSelect(e.target.v)}
-            // onClick={handleClick}
           >
             Africa
           </option>
-          <option className="bg-dark_el-200 font- p-2" value="Americas">
+          <option
+            className={`${
+              mode ? "text-dark_text" : "text-text_light-200"
+            } font-bold p-2`}
+            value="Americas"
+          >
             Americas
           </option>
-          <option className="bg-dark_el-200 font- p-2" value="Asia">
+          <option
+            className={`${
+              mode ? "text-dark_text" : "text-text_light-200"
+            } font-bold p-2`}
+            value="Asia"
+          >
             Asia
           </option>
-          <option className="bg-dark_el-200 font- p-2" value="Europe">
+          <option
+            className={`${
+              mode ? "text-dark_text" : "text-text_light-200"
+            } font-bold p-2`}
+            value="Europe"
+          >
             Europe
           </option>
-          <option className="bg-dark_el-200 font- p-2" value="Oceania">
+          <option
+            className={`${
+              mode ? "text-dark_text" : "text-text_light-200"
+            } font-bold p-2`}
+            value="Oceania"
+          >
             Oceania
           </option>
         </select>

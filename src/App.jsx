@@ -12,11 +12,15 @@ function App() {
   const [detail, setDetail] = useState(false);
   const [search, setSearch] = useState(null);
   const [select, setSelect] = useState(null);
+  const [mode, setMode] = useState(true);
 
 
   return (
-    <div className="App text-bg_light-200">
-      <Header />
+    <div className={`App ${mode? 'darkMode' :'lightMode'} text-bg_light-200`}>
+      <Header 
+      mode={mode}
+      setMode={setMode}
+      />
       <div className="px-4">
 
       <Search 
@@ -24,6 +28,9 @@ function App() {
       setCountries={setCountries}
       setDetail={setDetail}
       setSearch={setSearch}
+      search={search}
+      mode={mode}
+      setMode={setMode}
       />
       <Filter 
       // setSearch={setSearch}
@@ -31,12 +38,19 @@ function App() {
       countries={countries}
       setSelect={setSelect}
       select={select}
+      mode={mode}
+      setMode={setMode}
       />
       <Card 
       countries={countries}
       detail={detail}
       search={search}
+      setSearch={setSearch}
       select={select}
+      setSelect={setSelect}
+      mode={mode}
+      setMode={setMode}
+
       />
       </div>
     </div>

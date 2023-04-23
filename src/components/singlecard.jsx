@@ -1,15 +1,12 @@
-
 import React from "react";
 
-function Singlecard({search}) {
-
-
-    return (
-        <div className="card">
+function Singlecard({ search,mode }) {
+  return (
+    <div className="card h-screen">
       {search.map((country) => {
         return (
           <div
-            className="card bg-slate-600 w-[70%] rounded-xl mx-auto mb-4"
+            className={`card ${mode? 'text-dark_text' :'text-text_light-200'} w-[28%] rounded-xl mx-auto ${mode? 'bg-dark_el-200' :'bg-light_el-200'}`}
             key={country.name}
           >
             <img
@@ -27,8 +24,7 @@ function Singlecard({search}) {
         );
       })}
     </div>
-    )
-    
+  );
 }
 
 export default Singlecard;

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 
-function Search({ countries, setCountries, setDetail, setSearch }) {
+function Search({
+  countries,
+  setCountries,
+  setDetail,
+  setSearch,
+  search,
+  mode,
+  setMode,
+}) {
   const [input, setInput] = useState("");
 
   function handleSubmit(e) {
@@ -28,19 +36,26 @@ function Search({ countries, setCountries, setDetail, setSearch }) {
   }
 
   return (
-    <div className="search w-full bg-dark_el-200 rounded flex p-2 pl-4 mb-6 items-center">
+    <div
+      className={`search w-full  ${
+        mode ? "bg-dark_el-200" : "bg-light_el-200"
+      } rounded flex p-2 pl-4 mb-6 items-center ${
+        mode ? "text-dark_text" : "text-text_light-200"
+      } shadow-lg`}
+    >
       <FiSearch />
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search for a country.."
-          className="bg-transparent outline-none border-none ml-2 text-input_text-200"
-          onChange={(e) => {
-            e.preventDefault();
-            setInput(e.target.value);
-          }}
+      <form onSubmit={handleSubmit} >
+
+      <input
+        type="text"
+        placeholder="Search for a country.."
+        className="bg-transparent outline-none border-none ml-2 text-input_text-200"
+        onChange={(e) => {
+          e.preventDefault();
+          setInput(e.target.value);
+        }}
         />
-      </form>
+        </form>
     </div>
   );
 }

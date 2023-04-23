@@ -2,34 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { BsMoon } from "react-icons/bs";
 
-function Header() {
+function Header({mode, setMode}) {
   
-  let bodyStyle = document.body.style;
-  let newBg = bodyStyle.backgroundColor = 'hsl(207, 26%, 17%)';
+ function changerColor() {
+  mode ? setMode(false) : setMode(true);
   
-  const changerColor = () => {
-    if ( newBg === 'hsl(207, 26%, 17%)') {
-      newBg = 'hsl(0, 0%, 98%)';
-      console.log('clicked');
-      console.log(newBg);
-      
-    } else {
-      newBg = 'hsl(207, 26%, 17%)';
-      console.log('dark');
-      console.log(newBg);
-
-    }
-    // bodyStyle.backgroundColor = 'hsl(207, 26%, 17%)'
-
-  }
-  
- 
+ }
   
     return (
-  <div className="flex justify-between align-top font-bold p-6 bg-dark_el-200 mb-6">
+  <div className={`flex justify-between align-top font-bold p-6  ${mode? 'bg-dark_el-200' :'bg-light_el-200'} mb-6 ${mode? 'text-dark_text' :'text-text_light-200'} shadow-lg`}>
     <h1>Where in the world?</h1>
 
-    <div className="dark flex gap-2 items-center "
+    <div className={`dark flex gap-2 ${mode? 'text-dark_text' :'text-text_light-200'} items-center`}
     onClick={changerColor}
     onChange={(e)=>{
        e.preventDefault();
@@ -38,10 +22,11 @@ function Header() {
       }
     >
       <BsMoon/>
-      <p className="" >Dark Mode</p>
+      <p className='' >Dark Mode</p>
     </div>
   </div>
     )
 }
 
 export default Header;
+// ${mode? 'bg-dark_el-200' :'bg-light_el-200'}
