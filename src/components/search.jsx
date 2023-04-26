@@ -44,18 +44,17 @@ function Search({
       } shadow-lg`}
     >
       <FiSearch />
-      <form onSubmit={handleSubmit} >
-
-      <input
-        type="text"
-        placeholder="Search for a country.."
-        className="bg-transparent outline-none border-none ml-2 text-input_text-200"
-        onChange={(e) => {
-          e.preventDefault();
-          setInput(e.target.value);
-        }}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search for a country.."
+          className="bg-transparent outline-none border-none ml-2 text-input_text-200"
+          onChange={(e) => {
+            e.preventDefault();
+            setInput(e.target.value);
+          }}
         />
-        </form>
+      </form>
     </div>
   );
 }
