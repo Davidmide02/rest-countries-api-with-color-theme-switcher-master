@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 
 function Singlecard({ search, mode, handleDetails }) {
   return (
-    <Link to="/components/countrydetails">
+    <Link to="/country">
       <div className="card h-screen">
         {search.map((country) => {
           return (

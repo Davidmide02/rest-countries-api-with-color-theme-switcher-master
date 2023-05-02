@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 
-function Search({
-  countries,
-  setCountries,
-  setDetail,
-  setSearch,
-  search,
-  mode,
-  setMode,
-}) {
-  const [input, setInput] = useState("");
+function Search({ countries, setSearch, mode, input, setInput }) {
 
+  
   function handleSubmit(e) {
     e.preventDefault();
 

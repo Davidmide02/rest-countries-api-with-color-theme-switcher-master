@@ -29,4 +29,3 @@ function Header({mode, setMode}) {
 }
 
 export default Header;
-// ${mode? 'bg-dark_el-200' :'bg-light_el-200'}

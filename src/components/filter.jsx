@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Filter({ setCountries, countries, select, setSelect, mode }) {
+function Filter({ countries, setSearch, setSelect, mode, setInput }) {
   const [value, setValue] = useState();
 
   function handleClick() {
@@ -8,8 +8,11 @@ function Filter({ setCountries, countries, select, setSelect, mode }) {
       return;
     } else {
       setValue();
+      // to set the value in the input to empty
+      // setInput("");
       const region = countries.filter((country) => country.region === value);
       setSelect(region);
+      setSearch(null);
     }
   }
 

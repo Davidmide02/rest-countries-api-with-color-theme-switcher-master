@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*{js,jsx,ts,tsx}",
-    // "./src/**/*{html,js,jsx}"
+   
 
   ],
   theme: {
@@ -44,7 +44,6 @@ export default {
         }
 
       }
-      // light-mode:hsl(200, 15%, 8%),
     }
   },
   plugins: [],
