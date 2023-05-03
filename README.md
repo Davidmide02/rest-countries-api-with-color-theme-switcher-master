@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL here](https://github.com/Davidmide02/rest-countries-api-with-color-theme-switcher-master.git)
 - Live Site URL: [Live site URL here](https://davidmide02-rest-country.netlify.app/)
 
 ## My process
