@@ -35,7 +35,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop](./src/assets/rest-country-desktop.png)
+![Desktop](./src/assets/rest-country-mobile.png)
 
 
 
@@ -59,9 +60,6 @@ Users should be able to:
 ### What I learned
 
 In the course of this project I was able to learn more about useState, passing state and function as props.
-
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 
 ### Continued development
